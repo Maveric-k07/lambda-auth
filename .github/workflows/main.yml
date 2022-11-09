@@ -82,7 +82,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
       - name: Deploy new Lambda
-        run: aws lambda update-function-code --function-name fastapi --s3-bucket lambda-fastapi-test --s3-key api.zip --environment "{Variables={MONGO_URL=my-bucket,KEY=file.txt}}"
+        run: aws lambda update-function-code --function-name demo-auth --s3-bucket auth-test-amikus --s3-key api.zip --environment "{Variables={MONGO_URL=my-bucket,KEY=file.txt}}"
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_SECRET_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
